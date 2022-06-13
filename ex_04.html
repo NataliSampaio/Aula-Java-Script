@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+<body>
+    <h1>Exercicio 4</h1>
+    <p>Crie uma página HTML com uma caixa de texto e um botão "Incluir" que permita a adição de tarefas a
+        uma lista ordernada. Um botão "Destacar" deve permitir aplicar a cor vermelha a um item da lista
+        escolhido pelo usuário. Um botão "Remover" deve permitir remover um item da lista escolhido pelo
+        usuário</p>
+
+
+        <p>Lista de tarefas:</p>
+        <label for="tarefa">Tarefa:</label>
+        <input type="text" name="tarefa" id="tarefa" autofocus>
+        <button onclick="ex_08()">Incluir</button>
+        
+        <ol></ol>
+    
+        <script>
+            function ex_08(){
+                
+                // Acrescenta um novo item de lista
+                var elemento = document.createElement("li");
+                // var texto = document.createTextNode(document.getElementById("tarefa").value);
+    
+                // elemento.appendChild(texto);
+
+                elemento.innerHTML=(document.getElementById("tarefa").value)+"<button onclick='remover(this)'>X</button>"
+                elemento.innerHTML+="<button onclick='destacar(this)'>Destacar</button>"
+                var elemento_pai = document.getElementsByTagName("ol")[0];
+    
+                elemento_pai.appendChild(elemento);
+    
+                document.getElementById("tarefa").value = "";
+                document.getElementById("tarefa").focus();
+            }
+            function remover(btn){
+                btn.parentNode.remove();
+            }
+
+            function destacar(btn){
+                btn.parentNode.style.color ="red";
+            }
+        </script>
+
+</body>
+</html>

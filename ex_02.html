@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p">Crie uma página HTML com um parágrafo. Ao clicar em um botão, a cor de texto do parágrafo deve ser
+        alterada de acordo uma cor informada pelo usuário.</p>
+        <label for="cor">Cor</label>
+        <input type="color" name="cor" id="cor" > <br>
+        <button onclick="cor()" >Mudar Cor!!</button>
+        <script>
+
+            function cor() {
+                var cor=document.getElementById("cor").value
+                document.getElementById("p").style.color = cor;
+               
+
+            }
+            
+           </script>
+
+        
+
+
+</body>
+</html>

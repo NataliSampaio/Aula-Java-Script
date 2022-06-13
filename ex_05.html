@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+</head>
+<body>
+    <!-- Crie uma página HTML com uma lista suspensa contendo o nome de 3 cidades. Ao clicar em um botão
+deve ser possível ao usuário acrescentar uma nova cidade à lista. -->
+<h1>Cidades:</h1>
+
+
+   
+    <label for="cidade"></label>
+    <input type="text" name="cidade" id="cidade" autofocus>
+    <select name="cidades" id="cidades">
+        <option value="curitiba">Curitiba</option>
+        <option value="cascavel">Cascavel</option>
+        <option value="Jaguariaiva">Cascavel</option>
+    </select>
+    <button onclick="ex_05()">Incluir</button>
+  
+
+    <script>
+        function ex_05(){
+            
+            // Acrescenta um novo item de lista
+            var elemento = document.createElement("option");
+            var texto = document.createTextNode(document.getElementById("cidade").value);
+
+            elemento.appendChild(texto);
+
+            var elemento_pai = document.getElementsByTagName("select")[0];
+
+            elemento_pai.appendChild(elemento);
+
+            document.getElementById("cidade").value = "";
+            document.getElementById("cidade").focus();
+        }
+        </script>
+</body>
+</html>
+
+
+
