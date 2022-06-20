@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio10</title>
+</head>
+
+<body>
+    <p>Crie uma página HTML com a imagem de um semáforo desligado, centralizado na página e um botão,
+        também centralizado na página, com o texto "Ligar". Ao clicar no botão, o mesmo deve ter seu texto
+        alterado para "Desligar" e, a cada 3 segundos, a cor do semáforo deve ser alterada na sequencia
+        vermelho-amarelo, amarelo-verde, verde-vermelho até que seja pressionado, quando seu texto deve
+        ser alterado para "Ligar"</p>
+    <img id="semaforo" src="/semaforo/desligado.png" alt="desligado">
+
+    <button id="botao" onclick="clique()">Ligar!</button>
+
+
+
+
+    <script>
+
+
+        var element = document.getElementById('semaforo');
+        var intervalo;
+        function clique() {
+
+            
+            if (document.getElementById('botao').innerHTML =='Desligar') {
+                element.src = "/semaforo/desligado.png";
+                clearInterval(intervalo);
+            }else {
+                document.getElementById('botao').innerHTML =('Desligar');
+                intervalo = setInterval(trocar_cor, 3000);
+            }
+           
+
+            
+
+        }
+        function trocar_cor() {
+
+
+            if (element.src.includes("desligado")) {
+                element.src = "/semaforo/vermelho.png";
+            } else if (element.src.includes("vermelho")) {
+                element.src = "/semaforo/amarelo.png";
+            } else if (element.src.includes("amarelo")) {
+                element.src = "/semaforo/verde.png";
+            } else
+                element.src = "/semaforo/vermelho.png";
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio9</title>
+
+</head>
+<style>
+    img#semaforo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+    }
+    #botao {
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+
+</style>
+
+<body>
+    <p> Crie uma página HTML com a imagem de um semáforo na cor vemelha, centralizado na página, e um
+        botão, também centralizado na página, com o texto "Trocar cor". Ao clicar no botão, a cor do semáforo
+        deve ser alterada na sequencia vermelho-amarelo, amarelo-verde, verde-vermelho.</p>
+    <img id="semaforo" src="/semaforo/vermelho.png" alt="vermelho"> <br>
+    <button id="botao" onclick="troca()">Troca Cor!!</button>
+
+    <script>
+        function troca() {
+            var element = document.getElementById('semaforo');
+
+            if (element.src.includes("vermelho")) {
+                element.src = "/semaforo/amarelo.png";
+            } else if (element.src.includes("amarelo")) {
+                element.src = "/semaforo/verde.png";
+            } else
+
+                element.src = "/semaforo/vermelho.png";
+        }
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
